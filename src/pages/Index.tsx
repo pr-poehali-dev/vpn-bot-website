@@ -2,9 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
@@ -49,29 +47,29 @@ const Index = () => {
       {/* Header */}
       <header className="bg-[#2B2B2B] p-4 shadow-lg">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <Icon name="Shield" className="text-[#0088CC]" size={32} />
-            <h1 className="text-2xl font-bold">VPN BOT 🛡️</h1>
-          </div>
+            <h1 className="text-2xl font-bold">SecureVPN 🛡️</h1>
+          </Link>
           <nav className="flex space-x-6">
-            <a href="#home" className="hover:text-[#0088CC] transition-colors">
+            <Link to="/" className="hover:text-[#0088CC] transition-colors">
               Главная
-            </a>
-            <a
-              href="#features"
-              className="hover:text-[#0088CC] transition-colors"
-            >
-              Возможности
-            </a>
-            <a
-              href="#pricing"
+            </Link>
+            <Link
+              to="/pricing"
               className="hover:text-[#0088CC] transition-colors"
             >
               Тарифы
-            </a>
-            <a href="#news" className="hover:text-[#0088CC] transition-colors">
+            </Link>
+            <Link to="/news" className="hover:text-[#0088CC] transition-colors">
               Новости
-            </a>
+            </Link>
+            <Link
+              to="/admin"
+              className="hover:text-[#0088CC] transition-colors"
+            >
+              Админ
+            </Link>
             <Button
               onClick={() => setIsAdmin(!isAdmin)}
               variant={isAdmin ? "default" : "outline"}
